@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "myapp",
-    "slug": "myapp",
+    "name": "TestIOSApp",
+    "slug": "testiosapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,9 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.aizat.testiosapp",
+      "buildNumber": "1",
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
