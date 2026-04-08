@@ -26,7 +26,7 @@ export const CHALLENGES: Challenge[] = [
     title: 'Rule of Thirds',
     description: 'Place your subject off-center using the grid intersections as anchors.',
     tips: [
-      'Enable your camera's grid overlay before shooting.',
+      "Enable your camera's grid overlay before shooting.",
       'Place horizons on the top or bottom third, not the middle.',
       'Leave negative space in the direction your subject faces.',
     ],
@@ -48,7 +48,7 @@ export const CHALLENGES: Challenge[] = [
     tips: [
       'Shoot into a bright light source such as a window or sunset.',
       'Use spot metering on the bright area behind your subject.',
-      'Keep the subject's profile clean and instantly recognizable.',
+      "Keep the subject's profile clean and instantly recognizable.",
     ],
   },
 ];
