@@ -7,12 +7,28 @@ import {
   TouchableOpacity,
   StyleSheet,
   StatusBar,
+  Alert,
 } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
 import { CHALLENGES } from '../data/challenges';
 
 export default function ShutterQuestsScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const challenge = CHALLENGES[currentIndex];
+
+  const handleTakePhoto = async () => {
+    if (!Constants.isDevice) {
+      Alert.alert('Simulator detected', 'Camera is not available on the iOS simulator. Test this on a real device.');
+      return;
+    }
+    const { status } = await ImagePicker.requestCameraPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert('Permission required', 'Camera access is needed to take your challenge photo.');
+      return;
+    }
+    await ImagePicker.launchCameraAsync({ allowsEditing: false, quality: 1 });
+  };
 
   const handleShuffle = () => {
     let next: number;
@@ -60,8 +76,8 @@ export default function ShutterQuestsScreen() {
 
       {/* Submit Button */}
       <View style={styles.submitContainer}>
-        <TouchableOpacity style={styles.submitBtn} activeOpacity={0.85}>
-          <Text style={styles.submitBtnText}>Ready to Submit →</Text>
+        <TouchableOpacity style={styles.submitBtn} activeOpacity={0.85} onPress={handleTakePhoto}>
+          <Text style={styles.submitBtnText}>Take Your Picture</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -14,7 +14,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.aizat.testiosapp",
-      "buildNumber": "1",
+      "buildNumber": "2",
       "supportsTablet": false
     },
     "android": {
